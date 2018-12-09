@@ -63,7 +63,7 @@ gamma = 0.9
 pretrain_length = batch_size
 memory_size = 1000000
 stack_size = 4
-episode_render = True
+episode_render = False
 training = True
 c_threshold = 4
 epsilon = 0.05
@@ -617,7 +617,7 @@ def train_simple(stacked_frames):
                         print("A better model has been found and saved!")
 
 
-                    print('Episode:{}'.format(episode), 'Total reward:{}'.format(total_reward), 'Average_reward:{}'.formt(average_episode_reward),'Training Loss:{}'.format(loss))
+                    print('Episode:{}'.format(episode), 'Total reward:{}'.format(total_reward), 'Average_reward:{}'.format(average_episode_reward),'Training Loss:{}'.format(loss))
                     reward_list.append((episode, total_reward))
                     memory.add((state, action, reward, next_state, done))
                     step = max_steps
