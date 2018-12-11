@@ -61,8 +61,8 @@ max_steps = 50000
 batch_size = 20
 gamma = 0.99
 pretrain_length = 10000
-memory_size = 1000000
-episode_render = True
+memory_size = 100000
+episode_render = False
 training = True
 # FIXED Q TARGETS HYPERPARAMETERS 
 max_tau = 1000  # Tau is the C step where we update our target network
