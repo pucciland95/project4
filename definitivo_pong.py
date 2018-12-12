@@ -58,14 +58,14 @@ action_size = env.action_space.n
 learning_rate = 0.00025
 total_episodes = 1000
 max_steps = 50000
-batch_size = 18
+batch_size = 32
 gamma = 0.99
 pretrain_length = 1000
 memory_size = 100000
-episode_render = True
+episode_render = False
 training = True
 # FIXED Q TARGETS HYPERPARAMETERS 
-max_tau = 10000  # Tau is the C step where we update our target network
+max_tau = 1000  # Tau is the C step where we update our target network
 skiped_frame_treshold = 3
 step_threshold = 10000
 # SAMPLING STRATEGY FLAG: PER vs random
