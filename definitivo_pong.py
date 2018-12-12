@@ -56,9 +56,9 @@ def stack_frames(stacked_frames, next_state, state, is_new_episode):
 state_size = [84, 84, 4]
 action_size = env.action_space.n
 learning_rate = 0.00025
-total_episodes = 1000
+total_episodes = 15000
 max_steps = 50000
-batch_size = 32
+batch_size = 64
 gamma = 0.99
 pretrain_length = 1000
 memory_size = 100000
