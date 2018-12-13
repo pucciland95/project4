@@ -13,6 +13,28 @@ from textwrap import wrap
 from matplotlib.ticker import MaxNLocator
 warnings.filterwarnings('ignore')
 import gym
+import tensorflow as tf
+from keras import backend as K
+
+
+num_cores = 6
+
+num_GPU = 1
+num_CPU = 1
+
+config = tf.ConfigProto(intra_op_parallelism_threads=num_cores,\
+        inter_op_parallelism_threads=num_cores, allow_soft_placement=True,\
+        device_count = {'CPU' : num_CPU, 'GPU' : num_GPU})
+session = tf.Session(config=config)
+K.set_session(session)
+
+
+
+
+
+
+
+
 
 # env = retro.make(game='AirStriker-Genesis')
 env = gym.make('Pong-v0')
@@ -56,9 +78,9 @@ def stack_frames(stacked_frames, next_state, state, is_new_episode):
 state_size = [84, 84, 4]
 action_size = env.action_space.n
 learning_rate = 0.00025
-total_episodes = 15000
+total_episodes = 20000
 max_steps = 50000
-batch_size = 64
+batch_size = 32
 gamma = 0.99
 pretrain_length = 1000
 memory_size = 100000
